@@ -24,7 +24,7 @@ let html = `
 `;
 
 document.body.innerHTML = html;
-
+/*
 //get the data type of John's job
 console.log(typeof(job));
 //get the data type of John's age
@@ -43,15 +43,76 @@ console.log(typeof(numbers2));
 numbers2.forEach(number => {
     console.log("Let's count: " + number);
 });
-
+*/
 const mixedArray = [22, "banana", true];
 
 mixedArray.forEach(thingie => {
-    console.log("The current element is: " + thingie);
-    console.log("It is a " + typeof(thingie));
+    console.log("The current element is: " + thingie + ". It is a " + typeof(thingie) + ".");
 });
 
 //the length of the string element
 console.log("Banana is " + mixedArray[1].length + " characters long");
+console.log("");
 
 //add elements to an array
+mixedArray.push("apple");
+mixedArray.forEach(thingie => {
+    console.log("The current element is: " + thingie + ". It is a " + typeof(thingie));
+});
+console.log("");
+
+//add an element to the beginning of an array
+mixedArray.unshift(1000);
+mixedArray.forEach(thingie => {
+    console.log("The current element is: " + thingie + ". It is a " + typeof(thingie));
+});
+console.log("");
+
+//delete the last element
+mixedArray.pop();
+
+//delete the first element
+mixedArray.shift();
+mixedArray.forEach(thingie => {
+    console.log("The current element is: " + thingie + ". It is a " + typeof(thingie));
+});
+console.log("");
+
+//remove an element from a certain position
+mixedArray.splice(1,1); //splice(startfromposition, how many to remove)
+mixedArray.forEach(thingie => {
+    console.log("The current element is: " + thingie + ". It is a " + typeof(thingie));
+});
+console.log("");
+
+//Objects literals
+const person = {
+    firstName: "John",
+    lastName: "Doe",
+    age: 25,
+    email: "john.doe@gmail.com",
+    hobbies: ['music', 'sports'],
+    
+    getYearOfBirth: function() {
+        return 2019-this.age;
+    }
+}
+
+let val;
+val = person;
+val = person.firstName;
+val = person.lastName;
+val = person['lastName'];
+val = person.hobbies[1];
+val = person.getYearOfBirth();
+console.log(val);
+
+const people = [
+    {name: "Joe", age: 25},
+    {name: "Mama", age: 29},
+    {name: "Odysseus", age: 12}
+]
+
+people.forEach(person => {
+    console.log(person.name, "is", person.age, "years old.");
+})
